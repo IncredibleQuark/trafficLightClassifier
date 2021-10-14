@@ -10,17 +10,14 @@ def load_dataset(image_dir):
     # Populate this empty image list
     im_list = []
     image_types = ["red", "yellow", "green"]
-
     # Iterate through each color folder
     for im_type in image_types:
 
         # Iterate through each image file in each image_type folder
         # glob reads in any image with the extension "image_dir/im_type/*"
         for file in glob.glob(os.path.join(image_dir, im_type, "*")):
-
             # Read in the image
             im = mpimg.imread(file)
-
             # Check if the image exists/if it's been correctly read-in
             if not im is None:
                 # Append the image, and it's type (red, green, yellow) to the image list
